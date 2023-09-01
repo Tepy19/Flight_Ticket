@@ -1,0 +1,132 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set body styles */
+body {
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+/* Styling the navigation bar */
+.navbar {
+    width: 100%;
+    height: 100px;
+    background-color: #0d2b48;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    width: 100%;
+    max-width: 100px;
+    height: 70px;
+}
+
+.navbar .logo .logo-text {
+    margin-left: 10px;
+}
+
+.navbar .logo .logo-text h4 {
+    font-size: 20px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin-right: 40px;
+    margin-left: auto;
+}
+
+.navbar ul li {
+    margin-left: 30px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: rgb(58, 137, 174);
+}
+
+/* Styling the content section */
+.content {
+    max-width: 800px;
+    margin: 70px auto;
+    padding: 20px;
+}
+
+.content h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.content ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+.content li {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.content strong {
+    font-weight: bold;
+}
+
+/* Styling the button */
+.button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #0d2b48;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none; /* Remove the underline */
+    border-radius: 10px;
+}
+
+.back-btn:hover {
+    background-color: rgb(58, 137, 174);
+}

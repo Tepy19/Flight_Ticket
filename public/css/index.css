@@ -1,0 +1,613 @@
+/*
+
+Names:
+Sothea Seng
+Suntei Leang
+Natepy Vann
+
+Online Flight Booking System
+Paragon Airlines
+
+*/
+
+
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set body styles */
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* Styling the navigation bar */
+.navbar {
+  width: 100%;
+  height: 100px;
+  background-color: #0d2b48;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  width: 100%;
+  max-width: 100px;
+  height: 70px;
+}
+
+.navbar .logo .logo-text {
+  margin-left: 0px;
+}
+
+.navbar .logo .logo-text h4 {
+  font-size: 20px;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin-right: 40px;
+  margin-left: auto;
+}
+
+.navbar ul li {
+  margin-left: 30px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-family: 'Lato', sans-serif;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: rgb(58, 137, 174);
+}
+
+/* Styling the main picture section */
+.main-pic {
+  position: relative;
+  width: 100%;
+  height: 450px;
+}
+
+.main-pic img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+/* Styling the overlay on the main picture */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Styling the text overlay on the main picture */
+.text-overlay {
+  width: 1024px;
+  position: absolute;
+  top: calc(100px + 50px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-overlay h1 {
+  font-size: 30px;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.text-overlay p {
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.text-overlay button {
+  padding: 15px 20px;
+  background-color: #0d2b48;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  transition: 0.3s;
+  display: block;
+  border-radius: 5px;
+}
+
+/* Styling the container section */
+.container {
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  top: calc(275px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1024px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+
+.container .left-half {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+.container .right-half {
+  flex: 1;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-top: 50px;
+}
+
+.container label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+.container input[type="text"],
+.container input[type="date"],
+.container select {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ababab;
+  outline: none;
+  border-radius: 10px;
+}
+
+.container #class,
+.container #origin,
+.container #destination {
+  height: 40px;
+}
+
+.container #class {
+  margin-bottom: 5px;
+}
+
+.container #departure,
+.container #return {
+  padding: 13px;
+  margin: 10px 0 0px -1px;
+}
+
+.container .search-button {
+  display: flex;
+  justify-content: left;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.container .search-button button {
+  padding: 10px 20px;
+  background-color: #0d2b48;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  transition: 0.3s;
+  border-radius: 12px;
+}
+
+.container .search-button button:hover {
+  background-color: rgb(58, 137, 174);
+}
+
+.container .right-half .passenger-input {
+  display: flex;
+  margin-top: 10px;
+}
+
+.container .right-half .passenger-field {
+  flex: 1;
+}
+
+.container .right-half .passenger-field label {
+  display: inline-block;
+  width: 100px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.container .right-half .passenger-field input[type="number"] {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ababab;
+  margin-top: 10px;
+  font-family: 'Lato', sans-serif;
+  padding-left: 10px;
+}
+
+.container .right-half .passenger-field input[id="adults"] {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: 0;
+  font-family: 'Lato', sans-serif;
+  padding-left: 10px;
+}
+
+.container .right-half .passenger-field input[id="infants"] {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 0;
+  font-family: 'Lato', sans-serif;
+  padding-left: 10px;
+}
+
+/* Styling the login bar container */
+.login-bar-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  margin-top: 220px;
+  padding: 20px 20px 20px 20px;
+  border: 0px;
+  background: #0d2b48;
+  color: white;
+  border-radius: 10px;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-button {
+  margin-left: auto;
+}
+
+.login-button button {
+  background-color: white;
+  border: none;
+  box-shadow: none;
+  color: black;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  font-family: 'Lato', sans-serif;
+}
+
+.login-bar a {
+  text-decoration: underline;
+}
+
+/* Styling the container1 section */
+.container1 {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* Styling the footer section */
+footer {
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 15px;
+  color: black;
+}
+
+.name a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.name a:hover {
+  color: black;
+}
+
+.link a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.link a:hover {
+  color: black;
+}
+
+.contact {
+  width: 100%;
+}
+
+.icon {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  margin-top: 150px;
+}
+
+.icon img {
+  width: 15px;
+  padding-top: 20px;
+  margin-left: 10px;
+}
+
+.box0 {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(120, 115, 110);
+  font-size: 15px;
+}
+
+.na,
+.name,
+.link,
+.add {
+  width: 25%;
+  text-align: center;
+  line-height: 2;
+  font-weight: 300;
+}
+
+.na {
+  padding-left: 20px;
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+}
+
+.name,
+.link,
+.add {
+  padding-left: 10px;
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+}
+
+address {
+  margin-top: 10px;
+}
+
+hr {
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+@media (max-width: 768px) {
+  .box0 {
+    flex-wrap: wrap;
+  }
+  
+  .na,
+  .name,
+  .link,
+  .add {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .icon {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+
+/* Styling the highlights section */
+.container0 {
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.box {
+  background-image: linear-gradient(to right, orange 0%, orange 5px, white 5px, white 100%);
+  margin-left: 5px;
+}
+
+.high {
+  font-family: 'Lato', sans-serif;
+  font-size: 30px;
+  color: #0d2b48;
+  margin-top: 65px;
+  margin-bottom: 30px;
+  padding-left: 15px;
+}
+
+.firstrow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.pic1,
+.pic2,
+.mal {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.pic1 {
+  flex-basis: 66.66%;
+  position: relative;
+  text-align: left;
+}
+
+.pic2 {
+  flex-basis: calc(33.33% - 10px);
+  text-align: left;
+}
+
+.pic1 img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.pic2 img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.jp {
+  margin-top: 10px;
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+}
+
+.secondrow {
+  display: flex;
+  gap: 15px;
+}
+
+.mal {
+  flex-basis: calc(33.33% - 10px);
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.mal img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  padding-bottom: 10px;
+  border-radius: 7px;
+}
+
+.pp {
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  color: white;
+  font-family: 'Lato', sans-serif;
+}
+
+.overlay0 {
+  position: absolute;
+  width: 98.5%;
+  height: 100%;
+  bottom: 9px;
+  background-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  border-radius: 5px;
+}
+
+.tabs {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1024px;
+}
+
+.book_flights,
+.manage_booking,
+.check_in,
+.flight_status,
+.flight_schedule {
+  padding: 10px 20px;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: #555;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 175px;
+  text-align: center;
+}
+
+.container .content {
+  display: none;
+  margin-top: 20px;
+}
+
+.container .book_flights {
+  background-color: #0d2b48;
+  color: white;
+}
+
+.container .book_flights.selected {
+  background-color: #0d2b48;
+  color: white;
+}
+
+.container .book_flights.selected ~ .content {
+  display: block;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tabs > div {
+  padding: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabs > div:hover {
+  background-color: #f0f0f0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+select {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+}
